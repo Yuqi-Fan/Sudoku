@@ -146,6 +146,7 @@ def generate_game(sudoku):
                     break
                 else:
                     sudo[i][j] = num
+                    print(sudo)
         if not value:
             break
 
