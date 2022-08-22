@@ -124,7 +124,6 @@ def generate_game(sudoku):
             row = random.randint(0, 8)
             col = random.randint(0, 8)
         sudo[row][col] = 0
-    print(sudoku)
     print(sudo)
     print('Try to solve it.')
     i=0
@@ -141,17 +140,16 @@ def generate_game(sudoku):
                     else:
                         print('this value is right. next')
                         break
-            if i > 3:
-                print('you have used all of the chance. lose the game.')
-                value=False
-                break
-            else:
-                sudo[i][j] = num
+                if i > 3:
+                    print('you have used all of the chance. lose the game.')
+                    value=False
+                    break
+                else:
+                    sudo[i][j] = num
         if not value:
             break
 
     if i<4:
-        print(sudo)
         print('you solved all of the positions. Win the game!')
 
 def get_next(sudoku,row,col):
@@ -247,3 +245,8 @@ def sudoku():
     elif op == 2:
         sudoku_value = generate_board()
         generate_game(sudoku_value)
+
+
+sudoku()
+
+
